@@ -1,0 +1,112 @@
+uuid: 82350e8e-3599-4f78-b0a7-4e8ed421510b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.evenement.field_adresse
+    - field.field.node.evenement.field_compte_rendu
+    - field.field.node.evenement.field_date
+    - field.field.node.evenement.field_description
+    - field.field.node.evenement.field_lieu
+    - field.field.node.evenement.field_photo_s_
+    - field.field.node.evenement.field_tags_evenement
+    - node.type.evenement
+  module:
+    - colorbox
+    - datetime
+    - geolocation
+    - text
+    - user
+id: node.evenement.default
+targetEntityType: node
+bundle: evenement
+mode: default
+content:
+  field_adresse:
+    weight: 4
+    label: above
+    settings:
+      set_marker: '1'
+      title: ''
+      info_text: ''
+      google_map_settings:
+        height: 300px
+        width: 100%
+        type: ROADMAP
+        zoom: '10'
+        maxZoom: 18
+        minZoom: 0
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        scrollwheel: 1
+        gestureHandling: auto
+        draggable: 1
+        style: ''
+        info_auto_display: 1
+        marker_icon_path: ''
+        disableAutoPan: 1
+        rotateControl: 0
+        fullscreenControl: 0
+        preferScrollingToZooming: 0
+        disableDoubleClickZoom: 0
+      use_overridden_map_settings: 0
+      common_map: ''
+    third_party_settings: {  }
+    type: geolocation_map
+    region: content
+  field_compte_rendu:
+    type: entity_reference_label
+    weight: 5
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_date:
+    type: datetime_default
+    weight: 0
+    region: content
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+  field_description:
+    type: text_trimmed
+    weight: 1
+    region: content
+    label: above
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  field_photo_s_:
+    type: colorbox
+    weight: 3
+    region: content
+    label: above
+    settings:
+      colorbox_node_style: ''
+      colorbox_node_style_first: ''
+      colorbox_image_style: ''
+      colorbox_gallery: post
+      colorbox_gallery_custom: ''
+      colorbox_caption: auto
+      colorbox_caption_custom: ''
+    third_party_settings: {  }
+  field_tags_evenement:
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  links:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_lieu: true
+

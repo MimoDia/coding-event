@@ -1,0 +1,133 @@
+<?php
+
+use Drupal\taxonomy\Entity\Term;
+
+
+function participer_schema(){
+
+	$schema['participer_event_inscription'] = array(
+		'description' => 'This table is used to store user inscription for an event',
+		'fields' 		=> array(
+			'pid'					=> array(  
+										'type' => 'serial',
+										'unsigned' => TRUE,
+										'not null' => TRUE
+									),
+
+			'nid'					=> array(
+										'type' => 'int',
+										'unsigned' => TRUE,
+										'not null' => TRUE
+									),
+
+			'node_title' 	=> array(
+								        'type' => 'varchar',
+								        'length' => 255,
+										'not null' => TRUE
+									),
+
+			'uid'					=> array(
+										'type' => 'int',
+										'unsigned' => TRUE,
+										'not null' => TRUE
+									),
+
+			'nom' 	=> array(
+								        'type' => 'varchar',
+								        'length' => 255,
+										'not null' => TRUE
+									),
+			'email' 	=> array(
+								        'type' => 'varchar',
+								        'length' => 255,
+										'not null' => TRUE
+									),
+
+			'date'					=> array(
+										'type' => 'int',
+										'unsigned' => TRUE,
+										'not null' => TRUE
+									),
+			'choix_participation' 	=> array(
+								        'type' => 'varchar',
+								        'length' => 255,
+										'not null' => TRUE
+									),
+
+		),
+		'foreign keys' 	=> array(
+			'node_field_data' => array(
+							'table' => 'node_field_data',
+							'columns' => array(
+								'nid' => 'nid',
+							),
+			),
+			'users_field_data' => array(
+							'table' => 'users_field_data',
+							'columns' => array(
+								'uid' => 'uid',
+							),
+			),
+		),
+		'primary key' => array(
+			'pid'
+		),
+	);
+
+	return $schema;
+
+}
+
+
+//*******************************//
+
+
+//////////////////// Methode 1 ////////////////////
+// Desk le module est activé les termes de taxo sont aotomatiquement enregistrés en BD
+// use Drupal\taxonomy\Entity\Term;
+function participer_install() {
+	 	  // Nom machine du vocabulaire de taxonomie
+	  $vocabulaire = 'Paris-Lyon';
+
+	  // Noms des termes de taxonomie à ajouter
+	  $items = [
+	      'Paris Drupal Teaching ',
+	      'Paris Drupal Team Foot',
+	      'Paris Team Drupal Team agile',
+	      'Paris Managing Team',
+	      'Paris drupal meetup',
+	      'Lyon drupal Coding ',
+	      'Lyon drupal Meetup ',
+	      'Lyon drupal meetup ',
+	      'Lyon Managing Team',
+	      'Lyon team foot',
+	  ];
+
+	    foreach ($items as $item) {
+	      $term = Term::create(array(
+	        'parent' => array(),
+	        'name' => $item,
+	        'vid' => $vocabulaire,
+	      ))->save();
+	    }
+}
+//////////////////// Fin Methode 1 ////////////////////
+
+/*
+//////////////////// Methode 2 ////////////////////
+
+// Si dans le fichier .module, le hook update est actif, je l'appelle l'install ici
+  // use Drupal\taxonomy\Entity\Term;
+function participer_install()  {
+	// Appelle du hook qui a cree la taxo (vocubulaire et termes)
+	//participer_update_8001();
+}
+//////////////////// Fin Methode 2 ////////////////////
+
+*/
+function participer_uninstall() { 
+   // Remove the styles directory and generated images.
+  file_unmanaged_delete_recursive(file_default_scheme() . '://styles');
+}
+
+

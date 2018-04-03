@@ -1,0 +1,15 @@
+uuid: 18bc25e2-eef0-4c6e-828b-a6bc12a12934
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: _nom_de_utilisateur_courant_
+label: '[nom de utilisateur courant ]'
+type: 'canonical_entities:user'
+pattern: 'utilisateur-courant/[current-user:account-name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }
+

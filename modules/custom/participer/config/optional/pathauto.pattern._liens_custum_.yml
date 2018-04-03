@@ -1,0 +1,15 @@
+uuid: 59238cd6-aa61-48c1-aabb-68944ef709a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_link_content
+id: _liens_custum_
+label: '[liens custum]'
+type: 'canonical_entities:menu_link_content'
+pattern: '[menu_link_content:description]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }
+

@@ -1,0 +1,220 @@
+<?php 
+
+// Chemin qui nous ramen vers le contrilleur de base
+use Drupal\Core\Entity\EntityManager;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+use Drupal\block\Entity\Block; // pour pouvoir utiliser un bloc
+
+use Drupal\node\NodeInterface;
+
+use Drupal\taxonomy\Entity\Term; // pour les terme de taxo
+
+/***
+implemente hook_user_login
+*/
+function participer_user_login($account){
+//kint($account);
+//die(); // pour eviter de retomber automatiquement dans la page daccueil
+//drupal_set_message(t('Bonjour'),$account->get_current_user(oid),'success');
+// getAccountName()
+drupal_set_message(t('participer and Welcome dear %name !' , array('%name' => $account->getAccountName() ) ) );
+
+
+//drupal_set_message('Bonjour et bienvenue !' .$account->getAccountName());
+}
+
+// user_log et user_logout sont des hook qui doivent etre fai dans ce fichier
+
+function participercachedestructeur_user_logout($account){
+	\Drupal::service('cache_tags.invalidator')->invalidateTags(['ma_session']);
+}
+
+function participercachedestructeur_user_login($account){
+	\Drupal::service('cache_tags.invalidator')->invalidateTags(['ma_session']);
+}
+
+/*
+ exemple de hook qui insert les donnees dun node en BD (hook a remplacer par le nom du module)
+function modulename_node_insert(Drupal|Core|Entity|EntityInterface $node) {
+  db_insert('mytable')
+    ->fields(array(
+    'nid' => $node->id(), 
+    'extra' => $node->extra,
+  ))
+    ->execute();
+}
+*/
+
+	 function participer_page_attachments(array &$page){
+	 	// J'attache ma librairie que quand le nom de la route ci dessous est appellées dans l'URL qui affiche que les type de contenus "evenement"
+	 	// $routeName = \Drupal::routeMatch()->getParameter('node')->getType()=='evenement';
+
+	 	//if( $routeName =='TRUE'){
+		 $page['#attached']['library'][]= 'participer/participer'; // le 1eme participer est le nom du module. Le 2eme participer est le nom de la librarie participer.libraries.yml
+
+                     /*    
+			// METHODE 2 QUI PERMET DE SUPPRIMER LE BUTTON DU MODULE ADDTOCALENDAR SI LA DATE EST INF A LA DATE DU JOUR
+			// VA AVEC LE FICHIER PARTICIPER.JS
+			Methode pour passer la valeur d'un champs à un un fichier js (partciper.js) aprés avor attaché la libarairie
+			$node = \Drupal::routeMatch()->getParameter('node');
+
+                         if ($node instanceof \Drupal\node\NodeInterface) {
+
+                              if($node->getType()=='evenement'){
+ 
+	                   $dateDuchamps= $node->field_date->value;
+				//Je passe la variable date au fichier participer.js
+                           $page['#attached']['drupalSettings']['participer']['participer']['dateDuchamps'] =  $dateDuchamps;
+
+                          }
+                  	}
+
+			*/
+
+	}
+
+
+function participer_preprocess_field(&$variables) {
+   // METHODE 1 QUI PERMET DE SUPPRIMER LE BUTTON DU MODULE ADDTOCALENDAR SI LA DATE EST INF A LA DATE DU JOUR
+  // Si on est dans le field_date des évènements.
+  if($variables['element']['#field_name'] == "field_date" && $variables['element']['#bundle'] == "evenement") {
+	
+    $date = strtotime($variables['element']['0']['#attributes']['datetime']);
+
+    if($date < time()) {
+     unset($variables['#attached']); // Je supprime le contenu
+     unset($variables['#attached']);
+     unset($variables['items'][0]['content']['#suffix']);
+
+    }
+  }
+}
+
+/**
+ * Implements hook_block_access().
+ */
+function participer_preprocess_node(&$variables) {
+
+
+    $node = \Drupal::routeMatch()->getParameter('node');
+
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      // $dateDuchamps = $node->get('field_date')->getValue()[0] ;
+	// OU 
+	$dateDuchamps= $node->field_date->value;
+      // kint($dateDuchamps);
+    }
+     
+} 
+
+
+
+// use Drupal\taxonomy\Entity\Term;
+/**
+ * Implements hook_update_N().
+ */
+//
+// Ce hook va avec la methode 2 du fichier .install
+// function participer_update_8001(){
+// Nom machine du vocabulaire de taxonomie
+//    $vocabulaire = 'Paris-Lyon';
+// Noms des termes de taxonomie à ajouter
+//    $items = [
+//      'Paris Drupal Teaching ',
+//      'Paris Drupal Team Foot',
+//      'Paris Team Drupal Team agile',
+//     'Paris Managing Team',
+//      'Paris drupal meetup',
+//      'Lyon drupal Coding ',
+//      'Lyon drupal Meetup ',
+//      'Lyon drupal meetup ',
+//      'Lyon Managing Team',
+//      'Lyon team foot',
+//    ];
+//      foreach ($items as $item) {
+//       $term = Term::create(array(
+//          'parent' => array(),
+//          'name' => $item,
+//          'vid' => $vocabulaire,
+//        ))->save();
+//      }
+//}
+
+
+	
+
+/**
+ * Implements hook_block_access().
+ */
+function participer_preprocess_block(&$variables) {
+
+  $id = $variables['elements']['#plugin_id'];
+  // kint($id); // Affiche tous les les bloc du site et leur id sur la pagen front
+
+  if($id == "participate_event_block") {
+    $node = \Drupal::routeMatch()->getParameter('node');
+
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      $dateDuchamps = $node->get('field_date')->getValue()[0] ;    
+      if(strtotime($dateDuchamps['value']) < time()){
+        unset($variables['content']); // Je supprime le contenu 
+      }
+    }
+  }
+} 
+
+
+
+
+/*       OUBIEN
+function certif_page_attachments(array &$page){
+ $routeName = \Drupal::routeMatch()->getRouteName();
+ if ($routeName == 'participer.participer.form') {
+   $page['#attached']['library'][] = 'participer/participer';
+ }
+}*/
+
+/*
+function participer_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  foreach (array_keys($form['actions']) as $action) {
+    if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit' && $form_id == 'submit_form') {
+      $form['actions'][$action]['#submit'][] = 'participer_form_submit';
+    }
+  }
+}*/
+
+
+/*function participer_preprocess_views_view_field(&$variables) {
+  // kint($variables[view]->getUrl() );
+  kint($variables[field] );
+}
+*/
+/*
+function participer_preprocess_views_view(&$variables) {
+
+  $view= $variables['view'];
+  $field= $variables['field']->getValue($variables['row'];
+
+  $id = $view->storage->id();
+ 
+    // drupal_set_message('<pre>' . print_r($view->result, TRUE) . '</pre>');
+ // kint($view->result);
+ // kint($view->result[0]);
+  // kint($view->result[0]->_entity->field_date->id);
+  // kint($view->result[0]->nid);
+  
+  kint($field);
+}
+*/
+
+/*function participer_preprocess_views_view_field(&$variables) {
+  $view = $variables['view'];
+  $id = $view->storage->id();
+  if ($id == "field_date"){
+   $myFieldValue = $variables['field']->getValue($variables['row']);
+   kint($myFieldValue);
+  }
+}
+*/

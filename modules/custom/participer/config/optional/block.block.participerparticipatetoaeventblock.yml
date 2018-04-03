@@ -1,0 +1,39 @@
+uuid: 20bee171-fd35-4d14-ba90-430f2e2bdb54
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - node
+    - participer
+  theme:
+    - bartik
+_core:
+  default_config_hash: cyvSXtn1RezfF9yMAsIeKirCleConTXtM_7VawCWKRg
+id: participerparticipatetoaeventblock
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: participate_event_block
+settings:
+  id: participate_event_block
+  label: 'Participer participate to a event block'
+  provider: participer
+  label_display: visible
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      evenement: evenement
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  node_type:
+    id: node_type
+    bundles:
+      evenement: evenement
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+

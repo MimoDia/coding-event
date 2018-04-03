@@ -1,0 +1,20 @@
+id: user_profile_csv_import
+label: Import profile of drupalers
+migration_tags:
+  - csv
+source:
+  plugin: csv
+  path: 'public://csv/user_profile.csv'
+  header_row_count: 1
+  keys:
+    - Id
+process:
+  name: Name
+  pass: Pass
+  email: Email
+  field_last_name: Nom
+  field_first_name: Prenom
+  field_manager: Manager
+destination:
+  plugin: entity:user
+

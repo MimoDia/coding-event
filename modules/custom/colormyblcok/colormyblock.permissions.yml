@@ -1,0 +1,4 @@
+access administration pages pour le module color block:
+ title: 'Ma permission pour acceder aux droits de changer la couleur dun bloc'
+ description: 'Je fais une permission pour acces aux droits de changer la couleur dun bloc'
+ restrict access: 'true'

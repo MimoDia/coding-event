@@ -1,0 +1,17 @@
+name: Audio Embed Media
+type: module
+description: 'Integrates audio_embed_field with the media_entity module, creating a new media type tailored to display embedded audio. Useful for websites which are using the media suite of modules.'
+package: Audio Embed Field
+# core: 8.x
+dependencies:
+  - media_entity
+  - audio_embed_field
+
+# version: '8.x-1.0'
+# project: 'audio_embed_field'
+
+# Information added by Drupal.org packaging script on 2017-04-10
+version: '8.x-1.0'
+core: '8.x'
+project: 'audio_embed_field'
+datestamp: 1491848046

@@ -1,0 +1,37 @@
+uuid: 560189f1-9151-4695-9665-cd4fc708b890
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - node
+    - participer
+  theme:
+    - bartik
+id: totalnomberofpersonneparticipatetoaeventblock
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: calcul_nombre_total_partcipant_block
+settings:
+  id: calcul_nombre_total_partcipant_block
+  label: 'Total nomber of personne participate to a event block'
+  provider: participer
+  label_display: visible
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      evenement: evenement
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  node_type:
+    id: node_type
+    bundles:
+      evenement: evenement
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+

@@ -1,0 +1,21 @@
+uuid: b086facf-b7ab-4586-9620-3da1ddc289a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: 9D7dWmJNO2Clbuzo267QAAkM4_B_1AFDGz478orALC0
+name: Evenement
+type: evenement
+description: 'Lister tous les évéments du site'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false
+

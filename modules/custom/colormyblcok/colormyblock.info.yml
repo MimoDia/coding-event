@@ -1,0 +1,6 @@
+name: colormyblock
+description: module de coloration de blocs dans les régions du site
+type: module
+core: 8.x
+version: 8.4
+package: Custom

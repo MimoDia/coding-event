@@ -1,0 +1,12 @@
+
+#cette route est  automatiquement créee grace a drupal console au moment de la generation du formulaire de configuration
+colormyblock.colormyblock_form_admin_block_color:
+  path: '/admin/config/appearence/colormyblock/blockcolor'
+  defaults:
+    _form: '\Drupal\colormyblock\Form\ColormyblockFormAdminBlockColor'
+    _title: 'Colormyblock FormAdminBlockColor'
+  requirements:
+    _permission: 'access administration pages pour le module color block'
+  options:
+    _admin_route: TRUE
+

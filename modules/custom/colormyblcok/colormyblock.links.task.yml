@@ -1,0 +1,7 @@
+
+# doit etre present dans admin/appareance/colormyblock/blockcolor
+colormyblock.monblockadmincolor:  # ne doit pas correspondre dans ce cas des onglets (comme ceux au meme niveau que devel), au nom de la route: hello.historyUpdate:
+ title: 'Block color'
+ route_name: colormyblock.colormyblock_form_admin_block_color  # nomdelaroute dans le fichier colormyblock.routing.yml(route name)
+ base_route: system.themes_page
+ weight: 2

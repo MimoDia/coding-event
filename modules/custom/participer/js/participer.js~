@@ -1,0 +1,65 @@
+
+/*
+(function($, Drupal, drupalSettings){
+   $(document).ready(function(){
+
+
+
+alert('hello');
+
+   });
+})(jQuery, Drupal, drupalSettings);
+*/
+
+
+
+/*var now = new Date();
+
+(function($, Drupal, drupalSettings){
+   $(document).ready(function(){
+           $('.addtocalendar').hide();
+
+   });
+})(jQuery, Drupal, drupalSettings);*/
+
+
+var now = new Date();
+
+(function($, Drupal, drupalSettings){
+
+
+
+   $(document).ready(function(){
+   
+    dateDuchamps = new Date(drupalSettings.participer.participer.dateDuchamps);
+
+          if(dateDuchamps < now){
+           $('.addtocalendar').remove();
+	  }
+
+   });
+
+})(jQuery, Drupal, drupalSettings);
+
+
+   /* var now = new Date();
+
+    (function($, Drupal, drupalSettings) {
+
+      Drupal.behaviors.particip = {
+        attach: function(context, settings) {
+    $dateDuchamps = drupalSettings.participer.particip.dateDuchamps;
+
+console.log(dateDuchamps);
+
+	  if($dateDuchamps < now){
+           $('.addtocalendar').hide();
+	  }
+	}
+     }
+    })($, Drupal, drupalSettings);
+*/
+
+
+
+

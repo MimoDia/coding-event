@@ -1,0 +1,12 @@
+colormyblock:
+  version: VERSION
+  css:
+    theme:
+      css/colormyblock.css: {}
+      css/wysiwyg.css: {}
+  js:
+    js/colormyblock.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings 

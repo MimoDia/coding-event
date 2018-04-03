@@ -1,0 +1,17 @@
+name: participer
+description: 'module de participation à un événement'
+type: module
+core: 8.x
+version: 8.4
+package: Custom
+mtime: 1521130340
+dependencies:
+  - datetime
+  - fullcalendar_view
+  - node
+  - text
+  - user
+  - better_exposed_filters
+  - colorbox
+  - image
+php: 5.5.9

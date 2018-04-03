@@ -1,0 +1,70 @@
+<?php 
+
+// Chemin qui nous ramen vers le contrilleur de base
+use Drupal\Core\Entity\EntityManager;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+use Drupal\block\Entity\Block; // pour pouvoir utiliser un bloc
+
+use Drupal\node\NodeInterface;
+/***
+implemente hook_user_login
+*/
+function colormyblock_user_login($account){
+//kint($account);
+//die(); // pour eviter de retomber automatiquement dans la page daccueil
+//drupal_set_message(t('Bonjour'),$account->get_current_user(oid),'success');
+// getAccountName()
+drupal_set_message(t(' Welcome dear %name !' , array('%name' => $account->getAccountName() ) ) );
+
+
+//drupal_set_message('Bonjour et bienvenue !' .$account->getAccountName());
+}
+
+// user_log et user_logout sont des hook qui doivent etre fai dans ce fichier
+
+function colormyblockcachedestructeur_user_logout($account){
+	\Drupal::service('cache_tags.invalidator')->invalidateTags(['ma_session']);
+}
+
+function colormyblockcachedestructeur_user_login($account){
+	\Drupal::service('cache_tags.invalidator')->invalidateTags(['ma_session']);
+}
+
+
+// attachement de la librarie colormyblock// Apres avoir avant creer (declarer) ma librarie dans le fichier colormyblock.libraries.yml située à la racine de mon module
+	 function colormyblock_page_attachments(array &$page){
+	 	// J'attache ma librairie que quand le nom de la route ci dessous est appellées dans l'URL qui affiche que les type de contenus "evenement"
+	 	// $routeName = \Drupal::routeMatch()->getParameter('node')->getType()=='evenement';
+
+	 	//if( $routeName =='TRUE'){
+		 $page['#attached']['library'][]= 'colormyblock/colormyblock'; // le 1eme colormyblock est le nom du module. Le 2eme colormyblock est le nom de la librarie       colormyblock.libraries.yml
+	 //}
+	}
+
+/**
+ * Implements hook_block_access().
+ */
+function colormyblock_preprocess_block(&$variables) {
+
+/////////////////// Apparation des blocs colorés /////////
+      //kint($variables);
+    // recuperer le srvice config
+ //  colormyblock.colormyblockformadminblockcolor.config' vient de la function getEditableConfigNames() du formulaire de configuration
+    $class = \Drupal::config('colormyblock.formadminblockcolor.config')->get('color'); // 
+
+    // kint($variables['attributes']);  
+    $block = Block::load($variables['elements']['#id']);
+    $region = $block->getRegion();
+
+    if($region == 'sidebar_first'){
+      $variables['attributes']['class'][] = $class ; // affiche le nom de la class
+    }
+
+    if($region == 'sidebar_second'){
+      $variables['attributes']['class'][] = $class ; // affiche le nom de la class
+    }
+
+} 
+

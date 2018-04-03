@@ -1,0 +1,25 @@
+uuid: a496d3b7-9046-42a9-a283-e4f0db2515de
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: AbOtsSt5fcxYr0KQTFXIT6J76I5XXIAcgFDeXEpSrFs
+id: _motif_evenement_
+label: '[MOTIF EVENEMENT]'
+type: 'canonical_entities:node'
+pattern: '/evenement/[node:title]'
+selection_criteria:
+  66a6c367-1d40-47a7-b386-af72838a0302:
+    id: node_type
+    bundles:
+      evenement: evenement
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 66a6c367-1d40-47a7-b386-af72838a0302
+selection_logic: and
+weight: -5
+relationships: {  }
+

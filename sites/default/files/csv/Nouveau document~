@@ -1,0 +1,143 @@
+id: profile_csv_import_best
+label: Import profile of drupalers
+migration_groups:
+  - ACME import
+
+source:
+  plugin: csv
+  # Full path to the file.
+  path: 'var/www/html/Ibrahima_branche_tunnel/_www/sites/default/files/csv-file/profile-drupaliens-managerassocie.csvv'
+  # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  # Field enclosure. Double quotation marks (") by default.
+  enclosure: '"'
+  # The number of rows at the beginning which are not data.
+  header_row_count: 1
+  # The column(s) to use as a key. Each column specified will 
+  # create an index in the migration table and too many columns 
+  # may throw an index size error.
+  keys:
+    - Id
+  # Here we identify the columns of interest in the source file. 
+  # Each numeric key is the 0-based index of the column. 
+  # For each column, the key below is the field name assigned to 
+  # the data on import, to be used in field mappings below. 
+  # The value is a user-friendly string for display by the 
+  # migration UI.
+  column_names:
+    0:
+      id: 'Id'
+    1:
+      Name: 'Nom'
+    2:
+      First_name: 'Prenom'
+    3:
+      Email: 'Email'
+    4: 
+      Manager: 'Manager'
+
+process:
+ field_last_name: Nom
+ field_first_name: Prenom
+ field_email: Email
+ field_manager: Manager
+
+
+
+destination:
+  plugin: entity:user
+
+
+//////////Filename: migrate_plus.migration.profile_csv_import_best.yml////////////////////////
+
+uuid: 20a5d5e9-ee7f-4337-b221-91610a933579
+langcode: en
+status: true
+dependencies: {  }
+id: profile_csv_import_best
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: null
+label: 'Import profile of drupalers'
+source:
+  plugin: csv
+  path: var/www/html/Ibrahima_branche_tunnel/_www/sites/default/files/csv-file/profile-drupaliens-managerassocie.csvv
+  delimiter: ','
+  enclosure: '"'
+  header_row_count: 1
+  keys:
+    - Id
+  column_names:
+    -
+      id: Id
+    -
+      Name: Nom
+    -
+      First_name: Prenom
+    -
+      Email: Email
+    -
+      Manager: Manager
+process:
+  field_last_name: Nom
+  field_first_name: Prenom
+  field_email: Email
+  field_manager: Manager
+destination:
+  plugin: 'entity:user'
+migration_dependencies: null
+
+///////////////////////////////////////////////////////////////
+id: the_profile_csv_import
+label: Import profile of drupalers
+migration_groups:
+  - ACME import
+source:
+  plugin: csv
+  # Full path to the file.
+  path: 'var/www/html/Ibrahima_branche_tunnel/_www/sites/default/files/csv-file/profile-drupaliens-managerassocie.csv'
+  # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  # Field enclosure. Double quotation marks (") by default.
+  enclosure: '"'
+  # The number of rows at the beginning which are not data.
+  header_row_count: 1
+  # The column(s) to use as a key. Each column specified will 
+  # create an index in the migration table and too many columns 
+  # may throw an index size error.
+  keys:
+    - Id
+process:
+ field_last_name: Nom
+ field_first_name: Prenom
+ field_email: Email
+ field_manager: Manager
+destination:
+  plugin: entity:user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
