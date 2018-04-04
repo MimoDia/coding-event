@@ -1,0 +1,8 @@
+uuid: cd6b4f43-390c-48da-a31e-a644e751eeed
+langcode: en
+status: true
+dependencies: {  }
+id: commentaires
+label: Commentaires
+target_entity_type_id: comment
+description: ''

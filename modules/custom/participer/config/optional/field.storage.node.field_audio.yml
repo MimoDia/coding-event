@@ -1,0 +1,19 @@
+uuid: e6a35588-8aec-4af3-9512-66a297fbdc03
+langcode: en
+status: true
+dependencies:
+  module:
+    - audio_embed_field
+    - node
+id: node.field_audio
+field_name: field_audio
+entity_type: node
+type: audio_embed_field
+settings: {  }
+module: audio_embed_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

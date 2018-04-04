@@ -1,0 +1,31 @@
+uuid: 0f08389f-87f1-4ccf-8016-9b77a90f37a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description_compte_rendu_p
+    - node.type.compte_rendu
+    - paragraphs.paragraphs_type.description_compte_rendu_partie_
+  module:
+    - entity_reference_revisions
+id: node.compte_rendu.field_description_compte_rendu_p
+field_name: field_description_compte_rendu_p
+entity_type: node
+bundle: compte_rendu
+label: 'Description compte rendu partie 1'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      description_compte_rendu_partie_: description_compte_rendu_partie_
+    target_bundles_drag_drop:
+      description_compte_rendu_partie_:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

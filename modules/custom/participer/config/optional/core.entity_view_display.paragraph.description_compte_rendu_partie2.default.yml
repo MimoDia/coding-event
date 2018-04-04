@@ -1,0 +1,12 @@
+uuid: c47fdd27-3211-491e-ad15-fb6021bf0c72
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.description_compte_rendu_partie2
+id: paragraph.description_compte_rendu_partie2.default
+targetEntityType: paragraph
+bundle: description_compte_rendu_partie2
+mode: default
+content: {  }
+hidden: {  }

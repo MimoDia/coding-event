@@ -1,0 +1,24 @@
+uuid: 094799a3-8e65-43c5-8b3b-24d3398bd8d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audio
+    - node.type.compte_rendu
+  module:
+    - audio_embed_field
+id: node.compte_rendu.field_audio
+field_name: field_audio
+entity_type: node
+bundle: compte_rendu
+label: Audio
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    soundcloud: soundcloud
+    custom_url: custom_url
+field_type: audio_embed_field

@@ -1,0 +1,12 @@
+uuid: ea542730-3472-4f7d-95cc-19ca89d64f33
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.reunion_ausy
+id: paragraph.reunion_ausy.default
+targetEntityType: paragraph
+bundle: reunion_ausy
+mode: default
+content: {  }
+hidden: {  }

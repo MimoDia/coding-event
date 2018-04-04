@@ -1,0 +1,15 @@
+uuid: f225f385-d046-49b8-918b-b2cbed2db6cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.reunion_ausy
+id: paragraph.reunion_ausy.default
+targetEntityType: paragraph
+bundle: reunion_ausy
+mode: default
+content: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

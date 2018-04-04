@@ -1,0 +1,21 @@
+uuid: ac2c2f94-a2bc-4c30-a1cc-8b0a3f5c2d18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_adresse
+    - node.type.compte_rendu
+  module:
+    - geolocation
+id: node.compte_rendu.field_adresse
+field_name: field_adresse
+entity_type: node
+bundle: compte_rendu
+label: Adresse
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

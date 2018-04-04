@@ -1,0 +1,35 @@
+blocks: {  }
+menus: {  }
+taxonomies:
+  participation:
+    -
+      vid: participation
+      tid: '2'
+      langcode: en
+      name: 'Je participe'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2dfea077-0a2f-4cab-9289-d83e45d23683
+    -
+      vid: participation
+      tid: '3'
+      langcode: en
+      name: 'Je participe pas'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5e0ac2a5-909c-44f0-8dda-4a0940481ccb
+    -
+      vid: participation
+      tid: '4'
+      langcode: en
+      name: 'Je participe peut-être'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 38281397-aa64-4932-8cc5-1e2c93ee7047
+  tags: {  }

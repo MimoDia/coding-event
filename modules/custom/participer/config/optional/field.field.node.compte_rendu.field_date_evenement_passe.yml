@@ -1,0 +1,21 @@
+uuid: 40caf8a6-a62c-43ef-aaa0-97c635af18f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_evenement_passe
+    - node.type.compte_rendu
+  module:
+    - datetime
+id: node.compte_rendu.field_date_evenement_passe
+field_name: field_date_evenement_passe
+entity_type: node
+bundle: compte_rendu
+label: 'Date evenement passe'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

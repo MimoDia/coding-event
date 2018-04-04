@@ -1,0 +1,23 @@
+uuid: aacf5d93-bf13-4b7f-8563-df4920836163
+langcode: en
+status: true
+dependencies: {  }
+id: drupalien
+label: Drupalien
+weight: 4
+is_admin: null
+permissions:
+  - 'create compte_rendu content'
+  - 'create evenement content'
+  - 'delete own article content'
+  - 'delete own compte_rendu content'
+  - 'delete own evenement content'
+  - 'delete own page content'
+  - 'edit own article content'
+  - 'edit own calendrier content'
+  - 'edit own compte_rendu content'
+  - 'edit own evenement content'
+  - 'edit own page content'
+  - 'mapermission access a la liste de tous les types de contenus evenement'
+  - 'mapermission access formBlockToEventPartcicipate'
+  - 'view own unpublished content'

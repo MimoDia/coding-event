@@ -1,0 +1,20 @@
+uuid: 990c3c81-16e2-4edd-ad68-9f69ed81a675
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: jFpK_iD3GIyJIEHl2LRGOZCHe-RgI3eKNT4SiDpnvEY
+name: Calendrier
+type: calendrier
+description: 'Calendrier des événement à venir'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

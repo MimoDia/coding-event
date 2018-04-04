@@ -1,0 +1,21 @@
+uuid: 0dd897f5-e058-4bfe-a036-e1be193a9ca5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: MpE-vA0lMw_mqjnIcbF35pOpHeHPRN6v1zGvlxl9cpk
+id: node.field_compte_rendu
+field_name: field_compte_rendu
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

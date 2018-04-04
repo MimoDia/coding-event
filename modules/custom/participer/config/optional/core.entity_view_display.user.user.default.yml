@@ -1,0 +1,51 @@
+uuid: 483ca0fd-deee-4862-8489-544c2ce7fb8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_email
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_manager
+    - field.field.user.user.user_picture
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_email:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_first_name:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_last_name:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_manager:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  member_for: true
+  user_picture: true

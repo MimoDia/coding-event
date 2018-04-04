@@ -1,0 +1,30 @@
+uuid: 34a037e9-1844-477a-9b84-c10f73bdef4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_compte_rendu
+    - node.type.compte_rendu
+    - node.type.evenement
+_core:
+  default_config_hash: ac4syuN45DswYMDtwv1KU9tg6r-LyBefQ-JSVLblWhg
+id: node.evenement.field_compte_rendu
+field_name: field_compte_rendu
+entity_type: node
+bundle: evenement
+label: 'Compte rendu'
+description: 'Clef étrangere du TDC " compte rendu " (en reference content) présent dans le TDC "evenement"'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      compte_rendu: compte_rendu
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

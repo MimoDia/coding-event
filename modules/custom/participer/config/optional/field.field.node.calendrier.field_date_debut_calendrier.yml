@@ -1,0 +1,24 @@
+uuid: d8b0770b-0cb8-4c9b-bdc6-be29399ca854
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_debut_calendrier
+    - node.type.calendrier
+  module:
+    - datetime
+id: node.calendrier.field_date_debut_calendrier
+field_name: field_date_debut_calendrier
+entity_type: node
+bundle: calendrier
+label: 'Date debut calendrier'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

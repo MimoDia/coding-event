@@ -1,0 +1,60 @@
+uuid: 50c39a56-7c85-4853-9744-3975eb091c27
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.calendrier.field_date_debut_calendrier
+    - field.field.node.calendrier.field_date_fin_calendrier
+    - field.field.node.calendrier.field_description_calendrier
+    - field.field.node.calendrier.field_photo_calendier
+    - node.type.calendrier
+  module:
+    - datetime
+    - image
+    - text
+    - user
+id: node.calendrier.default
+targetEntityType: node
+bundle: calendrier
+mode: default
+content:
+  field_date_debut_calendrier:
+    weight: 2
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_date_fin_calendrier:
+    weight: 3
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_description_calendrier:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_photo_calendier:
+    weight: 5
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

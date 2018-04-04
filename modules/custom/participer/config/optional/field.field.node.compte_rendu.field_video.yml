@@ -1,0 +1,25 @@
+uuid: f44d9629-ca44-4281-bc02-004f1c0d111d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video
+    - node.type.compte_rendu
+  module:
+    - video_embed_field
+id: node.compte_rendu.field_video
+field_name: field_video
+entity_type: node
+bundle: compte_rendu
+label: Video
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    youtube_playlist: youtube_playlist
+    youtube: youtube
+    vimeo: vimeo
+field_type: video_embed_field

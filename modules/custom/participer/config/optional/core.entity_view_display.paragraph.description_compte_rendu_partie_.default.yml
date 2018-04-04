@@ -1,0 +1,30 @@
+uuid: ffbb6fcc-72c0-4c90-9d6d-9b6f5e50dc44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.description_compte_rendu_partie_.field_description_partie_1
+    - field.field.paragraph.description_compte_rendu_partie_.field_titre_description_partie_1
+    - paragraphs.paragraphs_type.description_compte_rendu_partie_
+  module:
+    - text
+id: paragraph.description_compte_rendu_partie_.default
+targetEntityType: paragraph
+bundle: description_compte_rendu_partie_
+mode: default
+content:
+  field_description_partie_1:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_titre_description_partie_1:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

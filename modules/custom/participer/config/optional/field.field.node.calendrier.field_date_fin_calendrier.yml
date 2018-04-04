@@ -1,0 +1,21 @@
+uuid: f7ef1191-a9d7-4585-b5ca-9460ef9e6477
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_fin_calendrier
+    - node.type.calendrier
+  module:
+    - datetime
+id: node.calendrier.field_date_fin_calendrier
+field_name: field_date_fin_calendrier
+entity_type: node
+bundle: calendrier
+label: 'Date fin calendrier'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

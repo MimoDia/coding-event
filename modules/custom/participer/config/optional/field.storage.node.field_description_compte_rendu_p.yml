@@ -1,0 +1,21 @@
+uuid: cb632b65-68aa-4667-bb9a-320674b82f0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: node.field_description_compte_rendu_p
+field_name: field_description_compte_rendu_p
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

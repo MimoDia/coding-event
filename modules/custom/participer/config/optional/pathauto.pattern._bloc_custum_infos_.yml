@@ -1,0 +1,14 @@
+uuid: 80baaeea-bbc1-4f19-ab0d-3f6429bbd4ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: _bloc_custum_infos_
+label: '[bloc custum infos ]'
+type: 'canonical_entities:block_content'
+pattern: '[block_content:info]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

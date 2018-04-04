@@ -1,0 +1,222 @@
+uuid: 389561f9-9faa-4851-92c0-b3827556ec81
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - field.field.node.compte_rendu.field_adresse
+    - field.field.node.compte_rendu.field_audio
+    - field.field.node.compte_rendu.field_commentaires_compte_rendu
+    - field.field.node.compte_rendu.field_date_evenement_passe
+    - field.field.node.compte_rendu.field_description_compte_rendu_p
+    - field.field.node.compte_rendu.field_lieu_dd_
+    - field.field.node.compte_rendu.field_photo_compte_rendu
+    - field.field.node.compte_rendu.field_tags
+    - field.field.node.compte_rendu.field_video
+    - node.type.compte_rendu
+  module:
+    - audio_embed_field
+    - comment
+    - datetime
+    - field_group
+    - geolocation
+    - image
+    - paragraphs_jquery_ui_accordion
+    - user
+    - video_embed_field
+third_party_settings:
+  field_group:
+    group_les_onglets:
+      children:
+        - group_infos_generales
+        - group_infos_capitales
+        - group_image_et_video
+        - group_carte
+        - group_commentaires_recus
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        label: 'Les onglets'
+        direction: horizontal
+        id: ''
+        classes: ''
+      label: 'Les onglets'
+      region: content
+    group_infos_generales:
+      children:
+        - field_date_evenement_passe
+        - field_tags
+      parent_name: group_les_onglets
+      weight: 16
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+      label: 'Infos générales'
+      region: content
+    group_infos_capitales:
+      children:
+        - field_description_compte_rendu_p
+      parent_name: group_les_onglets
+      weight: 17
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+      label: 'Infos capitales'
+      region: content
+    group_image_et_video:
+      children:
+        - field_photo_compte_rendu
+        - field_audio
+        - field_video
+      parent_name: group_les_onglets
+      weight: 18
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+      label: 'Image et vidéo'
+      region: content
+    group_carte:
+      children:
+        - field_adresse
+      parent_name: group_les_onglets
+      weight: 19
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+      label: Carte
+      region: content
+    group_commentaires_recus:
+      children:
+        - field_commentaires_compte_rendu
+      parent_name: group_les_onglets
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+      label: 'Commentaires reçus'
+      region: content
+id: node.compte_rendu.default
+targetEntityType: node
+bundle: compte_rendu
+mode: default
+content:
+  field_adresse:
+    weight: 8
+    label: above
+    settings:
+      set_marker: '1'
+      title: ''
+      info_text: ''
+      google_map_settings:
+        height: 300px
+        width: 100%
+        type: ROADMAP
+        zoom: '10'
+        maxZoom: 18
+        minZoom: 0
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        scrollwheel: 1
+        gestureHandling: auto
+        draggable: 1
+        style: ''
+        info_auto_display: 1
+        marker_icon_path: ''
+        disableAutoPan: 1
+        rotateControl: 0
+        fullscreenControl: 0
+        preferScrollingToZooming: 0
+        disableDoubleClickZoom: 0
+      use_overridden_map_settings: 0
+      common_map: ''
+    third_party_settings: {  }
+    type: geolocation_map
+    region: content
+  field_audio:
+    weight: 14
+    label: above
+    settings:
+      responsive: true
+      width: 854
+      height: 250
+      autoplay: false
+    third_party_settings: {  }
+    type: audio_embed_field_audio
+    region: content
+  field_commentaires_compte_rendu:
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_date_evenement_passe:
+    weight: 17
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_description_compte_rendu_p:
+    type: paragraphs_jquery_ui_accordion_formatter
+    weight: 15
+    label: above
+    settings:
+      bundle: description_compte_rendu_partie_
+      title: field_titre_description_partie_1
+      content: field_description_partie_1
+      autoscroll: '1'
+    third_party_settings: {  }
+    region: content
+  field_photo_compte_rendu:
+    weight: 13
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_tags:
+    weight: 18
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_video:
+    weight: 15
+    label: above
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: true
+    third_party_settings: {  }
+    type: video_embed_field_video
+    region: content
+hidden:
+  field_lieu_dd_: true
+  links: true

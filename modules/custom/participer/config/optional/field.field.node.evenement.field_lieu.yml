@@ -1,0 +1,23 @@
+uuid: dc6e05cd-a0bc-4a7c-a904-97a7669da808
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lieu
+    - node.type.evenement
+  module:
+    - geolocation
+_core:
+  default_config_hash: YI3YdgDjM4gcCHq0VbkY9ad9cirO8qfZsowZJYcDpAg
+id: node.evenement.field_lieu
+field_name: field_lieu
+entity_type: node
+bundle: evenement
+label: Lieu
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

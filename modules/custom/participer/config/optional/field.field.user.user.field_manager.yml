@@ -1,0 +1,21 @@
+uuid: bafbc5a2-4bcd-44ca-a480-8c62aa28ff21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_manager
+  module:
+    - text
+    - user
+id: user.user.field_manager
+field_name: field_manager
+entity_type: user
+bundle: user
+label: Manager
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,9 @@
+uuid: 6ae27d8e-fe4d-4a38-ad62-42b0ba926fcd
+langcode: en
+status: true
+dependencies: {  }
+id: reunion_ausy
+label: 'Reunion Ausy'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,113 @@
+uuid: 2c33bd10-52a1-49ee-9d71-43884ebb7e33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.calendrier.field_date_debut_calendrier
+    - field.field.node.calendrier.field_date_fin_calendrier
+    - field.field.node.calendrier.field_description_calendrier
+    - field.field.node.calendrier.field_photo_calendier
+    - image.style.thumbnail
+    - node.type.calendrier
+  module:
+    - datetime
+    - image
+    - path
+    - scheduler
+    - text
+id: node.calendrier.default
+targetEntityType: node
+bundle: calendrier
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date_debut_calendrier:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_date_fin_calendrier:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_description_calendrier:
+    weight: 12
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_photo_calendier:
+    weight: 13
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

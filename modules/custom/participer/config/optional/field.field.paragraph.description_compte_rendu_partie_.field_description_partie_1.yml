@@ -1,0 +1,21 @@
+uuid: 3ae785d9-85a3-46bf-84a6-24be4301b9c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description_partie_1
+    - paragraphs.paragraphs_type.description_compte_rendu_partie_
+  module:
+    - text
+id: paragraph.description_compte_rendu_partie_.field_description_partie_1
+field_name: field_description_partie_1
+entity_type: paragraph
+bundle: description_compte_rendu_partie_
+label: 'Description partie 1'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

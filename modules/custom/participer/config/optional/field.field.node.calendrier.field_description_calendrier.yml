@@ -1,0 +1,21 @@
+uuid: 2c0117da-32f3-4639-ae51-287db9394a35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description_calendrier
+    - node.type.calendrier
+  module:
+    - text
+id: node.calendrier.field_description_calendrier
+field_name: field_description_calendrier
+entity_type: node
+bundle: calendrier
+label: 'Description calendrier'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

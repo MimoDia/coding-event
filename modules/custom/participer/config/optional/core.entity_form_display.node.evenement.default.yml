@@ -1,4 +1,4 @@
-uuid: 82350e8e-3599-4f78-b0a7-4e8ed421510b
+uuid: 8cf9eb24-4da7-4344-a0fc-26c28ea81b11
 langcode: en
 status: true
 dependencies:
@@ -10,103 +10,142 @@ dependencies:
     - field.field.node.evenement.field_lieu
     - field.field.node.evenement.field_photo_s_
     - field.field.node.evenement.field_tags_evenement
+    - image.style.thumbnail
     - node.type.evenement
   module:
-    - colorbox
     - datetime
     - geolocation
+    - image
+    - scheduler
     - text
-    - user
 id: node.evenement.default
 targetEntityType: node
 bundle: evenement
 mode: default
 content:
   field_adresse:
-    weight: 4
-    label: above
+    weight: 7
     settings:
-      set_marker: '1'
-      title: ''
-      info_text: ''
+      populate_address_field: ''
+      target_address_field: null
+      explicite_actions_address_field: ''
+      default_longitude: null
+      default_latitude: null
+      auto_client_location: ''
+      auto_client_location_marker: ''
+      allow_override_map_settings: 0
       google_map_settings:
-        height: 300px
-        width: 100%
         type: ROADMAP
         zoom: '10'
-        maxZoom: 18
         minZoom: 0
+        maxZoom: 18
+        rotateControl: 0
         mapTypeControl: 1
         streetViewControl: 1
         zoomControl: 1
+        fullscreenControl: 0
         scrollwheel: 1
-        gestureHandling: auto
+        disableDoubleClickZoom: 0
         draggable: 1
-        style: ''
+        height: 400px
+        width: 100%
         info_auto_display: 1
         marker_icon_path: ''
         disableAutoPan: 1
-        rotateControl: 0
-        fullscreenControl: 0
+        style: ''
         preferScrollingToZooming: 0
-        disableDoubleClickZoom: 0
-      use_overridden_map_settings: 0
-      common_map: ''
+        gestureHandling: auto
     third_party_settings: {  }
-    type: geolocation_map
+    type: geolocation_googlegeocoder
     region: content
   field_compte_rendu:
-    type: entity_reference_label
-    weight: 5
+    type: options_select
+    weight: 8
     region: content
-    label: above
-    settings:
-      link: true
+    settings: {  }
     third_party_settings: {  }
   field_date:
     type: datetime_default
-    weight: 0
-    region: content
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-  field_description:
-    type: text_trimmed
-    weight: 1
-    region: content
-    label: above
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-  field_photo_s_:
-    type: colorbox
     weight: 3
     region: content
-    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_description:
+    type: text_textarea
+    weight: 4
+    region: content
     settings:
-      colorbox_node_style: ''
-      colorbox_node_style_first: ''
-      colorbox_image_style: ''
-      colorbox_gallery: post
-      colorbox_gallery_custom: ''
-      colorbox_caption: auto
-      colorbox_caption_custom: ''
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_photo_s_:
+    type: image_image
+    weight: 6
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
   field_tags_evenement:
-    type: entity_reference_label
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 1
+    region: content
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 10
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 0
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
     weight: 2
     region: content
-    label: above
     settings:
-      link: true
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-  links:
-    weight: 6
+  uid:
+    type: entity_reference_autocomplete
+    weight: 11
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  created: true
   field_lieu: true
-
+  path: true

@@ -1,0 +1,31 @@
+uuid: 2901dacb-55fe-470e-93f1-40f5f5113cff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags_evenement
+    - node.type.evenement
+    - taxonomy.vocabulary.tags
+_core:
+  default_config_hash: SDtYvmQSUjZQ2bTzffL14274jezAu6Qe3719vDG7Ftw
+id: node.evenement.field_tags_evenement
+field_name: field_tags_evenement
+entity_type: node
+bundle: evenement
+label: Tags-evenements
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

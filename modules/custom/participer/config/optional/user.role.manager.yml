@@ -1,0 +1,23 @@
+uuid: 99e664b9-ef9f-4501-abb9-2d603302992a
+langcode: en
+status: true
+dependencies: {  }
+id: manager
+label: Manager
+weight: 3
+is_admin: null
+permissions:
+  - 'create compte_rendu content'
+  - 'create evenement content'
+  - 'delete own article content'
+  - 'delete own compte_rendu content'
+  - 'delete own evenement content'
+  - 'delete own page content'
+  - 'edit own article content'
+  - 'edit own calendrier content'
+  - 'edit own compte_rendu content'
+  - 'edit own evenement content'
+  - 'edit own page content'
+  - 'mapermission access a la liste de tous les types de contenus evenement'
+  - 'mapermission access formBlockToEventPartcicipate'
+  - 'view own unpublished content'

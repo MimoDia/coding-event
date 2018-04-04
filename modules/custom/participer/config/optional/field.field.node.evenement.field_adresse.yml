@@ -1,0 +1,21 @@
+uuid: eb356dc7-fc62-48d1-ad4b-87e0c73c664c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_adresse
+    - node.type.evenement
+  module:
+    - geolocation
+id: node.evenement.field_adresse
+field_name: field_adresse
+entity_type: node
+bundle: evenement
+label: Adresse
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

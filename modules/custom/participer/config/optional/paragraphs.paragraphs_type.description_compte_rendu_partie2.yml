@@ -1,0 +1,9 @@
+uuid: 4bfa9100-1307-40c0-b13b-3b31c003e538
+langcode: en
+status: true
+dependencies: {  }
+id: description_compte_rendu_partie2
+label: 'Description compte rendu partie 2'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,11 @@
+uuid: 170bfa63-1359-41c5-a519-f1104cb2801f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: AEcyhTZMuuSt7igdDCLPkSZnQQPbw_CBZkAzCpTBMb4
+name: Participation
+vid: participation
+description: ''
+hierarchy: 0
+weight: 0

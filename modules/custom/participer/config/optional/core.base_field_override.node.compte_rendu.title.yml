@@ -1,0 +1,18 @@
+uuid: 186bd784-c039-4490-bb2d-19c50747fd28
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.compte_rendu
+id: node.compte_rendu.title
+field_name: title
+entity_type: node
+bundle: compte_rendu
+label: Titre
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
